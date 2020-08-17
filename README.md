@@ -63,6 +63,7 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --maste
 Write the answers to these questions in the README.md doc of your GitHub repo:
 
 How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
+
  ---> SparkSession property parameters were observed by measuring the processedRowspersecond parameter in the Progress Report. The higher number we set in spark.conf.set, the         higher the processing rows per second increases which means High thorugh put and low latecy of the data.
  
 What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
