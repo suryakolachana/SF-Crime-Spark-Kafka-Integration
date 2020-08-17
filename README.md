@@ -53,15 +53,19 @@ Apache Spark already has an integration with Kafka brokers, so we would not norm
 
 # Implement all the TODO items in data_stream.py. To do some Data Analysis You may need to explore the dataset beforehand using a Jupyter Notebook which I Included.
 
-# Do a spark-submit using this command: spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py.
+# Do a spark-submit using this command: 
+
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py.
   Check the progress reporter after executing a Spark job.
   Check the Spark Streaming UI as the streaming continues.
   
 # Step 3
+
 Write the answers to these questions in the README.md doc of your GitHub repo:
 
 How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
  ---> SparkSession property parameters were observed by measuring the processedRowspersecond parameter in the Progress Report. The higher number we set in spark.conf.set, the         higher the processing rows per second increases which means High thorugh put and low latecy of the data.
  
 What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
----> The Infrasturcture and the Data needs to be Analysed first before we decide on making configuration changes. If we are working on Distributed Computing Architecture then it will depend on the number of nodes for each cluster we have to process the data.
+
+ ---> The Infrasturcture and the Data needs to be Analysed first before we decide on making configuration changes on SparkSession Properties. If we are working on Distributed         Computing Architecture then it will depend on the number of nodes we have to process the data. If we have quad-core Processors to support the                                     spark.default.parallelism we could achieve more rows being processed in less amount of time. spark.streaming.kafka.maxRatePartition is also useful in making the streaming       process more stable and efficient. Large Number of Unprocessed messages will be prevented by setting the maximum rate for each partition. Lastly we can decider the number       of partitions for the Data set is to divide the dataset size / partition size and providing the desire count in spark.sql.shuffle.partitions. 
