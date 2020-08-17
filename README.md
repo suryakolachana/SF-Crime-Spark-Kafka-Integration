@@ -5,8 +5,6 @@
 # In this Project You will draw on the skills and knowledge you've learned to create a Kafka server to produce data, and ingest data through Spark Structured Streaming.
 
 # Development Environment
-  You may choose to create your project in the workspace we provide here, or if you wish to develop your project locally, you will need to set up your environment properly as       described below:
-
   Spark 2.4.3
   Scala 2.11.x
   Java 1.8.x
@@ -38,13 +36,14 @@
 
  Use the commands below to start the Zookeeper and Kafka servers. You can find the bin and config folder in the Kafka binary that you have downloaded and unzipped.
 
- # bin/zookeeper-server-start.sh config/zookeeper.properties
- # bin/kafka-server-start.sh config/server.properties
+   bin/zookeeper-server-start.sh config/zookeeper.properties
+   bin/kafka-server-start.sh config/server.properties
  
-# You can start the bootstrap server using this Python command: python kafka_server.py.
+   You can start the bootstrap server using this Python command: python kafka_server.py.
 
 # Step 1
  The first step is to build a simple Kafka server and Complete the code for the server in producer_server.py and kafka_server.py.
+ 
 # Local Environment
  To see if you correctly implemented the server, use the command bin/kafka-console-consumer --bootstrap-server localhost:<your-port-number> --topic <your-topic-name> --from-       beginning to see your output.
   
